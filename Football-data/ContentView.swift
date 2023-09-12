@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var competitions = [Competition]()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        NavigationView {
+                    List {
+                        NavigationLink("Premier League", destination: LeagueDetailView(competition: Competition(id: 2021, name: "Premier League")))
+                        NavigationLink("La Liga", destination: LeagueDetailView(competition: Competition(id: 2014, name: "La Liga")))
+                        NavigationLink("Bundesliga", destination: LeagueDetailView(competition: Competition(id: 2002, name: "Bundesliga")))
+//                        NavigationLink("J-League", destination: LeagueDetailView(competition: Competition(id: 2019, name: "J-League")))
+                    }
+                    .navigationTitle("Leagues")
+                }
+        
     }
 }
 
@@ -24,3 +29,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
