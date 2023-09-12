@@ -10,7 +10,8 @@ import Combine
 
 class APIManager {
     let baseURL = "https://api.football-data.org/v2/"
-    let apiKey = "2c5b5879922b4abca85d3c3a35eb955a"
+    //attention
+    let apiKey = "Your Football-data.org APIKey"
 
     static let shared = APIManager()
 
